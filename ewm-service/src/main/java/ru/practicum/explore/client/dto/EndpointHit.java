@@ -1,4 +1,4 @@
-package ru.practicum.explore.client;
+package ru.practicum.explore.client.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ViewStats {
+public class EndpointHit {
     private String app;
     private String uri;
-    private int hits;
+    private String ip;
+    private String timestamp;
 }
