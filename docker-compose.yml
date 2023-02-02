@@ -21,6 +21,7 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     environment:
+      - TZ=Europe/Moscow
       - POSTGRES_DB=stats
       - POSTGRES_USER=explore
       - POSTGRES_PASSWORD=explore
