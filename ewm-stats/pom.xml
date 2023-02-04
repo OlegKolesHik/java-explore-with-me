@@ -11,11 +11,19 @@
 
     <artifactId>ewm-stats</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>client</module>
         <module>dto</module>
         <module>service</module>
     </modules>
+
+    <dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
