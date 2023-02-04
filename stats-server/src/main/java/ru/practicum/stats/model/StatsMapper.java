@@ -7,6 +7,6 @@ public class StatsMapper {
         return new ViewStats(
                 object.get(2).toString(),
                 object.get(1).toString(),
-                Integer.parseInt(object.get(0).toString()));
+                Integer.reverse(Integer.parseInt(object.get(0).toString())));
     }
 }
