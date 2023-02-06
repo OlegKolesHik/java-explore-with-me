@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.yandex.practicum.stat.mapper.HitMapper;
-import ru.yandex.practicum.stat.model.EndpointHitDto;
+import ru.yandex.practicum.stat.model.EndpointHit;
 import ru.yandex.practicum.stat.model.Hit;
 import ru.yandex.practicum.stat.model.ViewStats;
 import ru.yandex.practicum.stat.repository.StatRepository;
@@ -25,7 +25,7 @@ public class StatServiceImpl implements StatService {
 
     @Transactional
     @Override
-    public void saveHit(EndpointHitDto endpointHit) {
+    public void saveHit(EndpointHit endpointHit) {
         Hit hit = HitMapper.toHit(endpointHit);
         statRepository.save(hit);
     }

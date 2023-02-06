@@ -1,6 +1,6 @@
 package ru.yandex.practicum.stat.mapper;
 
-import ru.yandex.practicum.stat.model.EndpointHitDto;
+import ru.yandex.practicum.stat.model.EndpointHit;
 import ru.yandex.practicum.stat.model.Hit;
 import ru.yandex.practicum.stat.model.ViewStats;
 
@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 public class HitMapper {
     public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    public static Hit toHit(EndpointHitDto endpointHit) {
+    public static Hit toHit(EndpointHit endpointHit) {
         return Hit
                 .builder()
                 .id(endpointHit.getId())
