@@ -9,7 +9,7 @@ import org.springframework.validation.annotation.Validated;
 @Getter
 @Setter
 @Builder
-public class EndpointHit {
+public class EndpointHitDto {
     private Integer id;
 
     private String app;
