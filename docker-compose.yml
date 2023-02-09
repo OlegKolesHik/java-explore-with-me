@@ -34,7 +34,6 @@ services:
     depends_on:
       - stats-server
     environment:
-      - STATS_URL=http://stats-server:9090
       - SPRING_DATASOURCE_URL=jdbc:postgresql://ewm-db:5432/ExploreWithMe
       - SPRING_DATASOURCE_USERNAME=explore
       - SPRING_DATASOURCE_PASSWORD=explore
@@ -44,8 +43,6 @@ services:
     container_name: ewm-db
     ports:
       - "6542:5432"
-    volumes:
-      - /var/lib/postgresql/data/
     environment:
       - POSTGRES_DB=ExploreWithMe
       - POSTGRES_USER=explore
