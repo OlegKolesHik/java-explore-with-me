@@ -1,10 +1,10 @@
-package ru.yandex.practicum.stat.service;
+package ru.yandex.practicum.stats.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.yandex.practicum.stat.model.EndpointHitDto;
-import ru.yandex.practicum.stat.model.StatsMapper;
-import ru.yandex.practicum.stat.repository.StatsRepository;
+import ru.yandex.practicum.stats.model.EndpointHitDto;
+import ru.yandex.practicum.stats.model.StatsMapper;
+import ru.yandex.practicum.stats.repository.StatsRepository;
 
 
 import java.time.LocalDateTime;

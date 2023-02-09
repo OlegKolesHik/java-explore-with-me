@@ -1,4 +1,4 @@
-package ru.yandex.practicum.stat.model;
+package ru.yandex.practicum.stats.model;
 
 import lombok.*;
 

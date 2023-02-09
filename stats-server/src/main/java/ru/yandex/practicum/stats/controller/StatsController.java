@@ -1,4 +1,4 @@
-package ru.yandex.practicum.stat.controller;
+package ru.yandex.practicum.stats.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.yandex.practicum.stat.model.EndpointHitDto;
-import ru.yandex.practicum.stat.service.StatsService;
+import ru.yandex.practicum.stats.model.EndpointHitDto;
+import ru.yandex.practicum.stats.service.StatsService;
 
 import java.util.List;
 

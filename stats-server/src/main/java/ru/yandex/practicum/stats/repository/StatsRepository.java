@@ -1,8 +1,8 @@
-package ru.yandex.practicum.stat.repository;
+package ru.yandex.practicum.stats.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.yandex.practicum.stat.model.EndpointHitDto;
+import ru.yandex.practicum.stats.model.EndpointHitDto;
 
 
 @Repository

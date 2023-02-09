@@ -1,6 +1,6 @@
-package ru.yandex.practicum.stat.service;
+package ru.yandex.practicum.stats.service;
 
-import ru.yandex.practicum.stat.model.EndpointHitDto;
+import ru.yandex.practicum.stats.model.EndpointHitDto;
 
 import java.util.List;
 

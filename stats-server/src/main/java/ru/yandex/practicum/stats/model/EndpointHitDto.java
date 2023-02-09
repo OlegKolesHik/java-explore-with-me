@@ -1,8 +1,7 @@
-package ru.yandex.practicum.stat.model;
+package ru.yandex.practicum.stats.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
-import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
