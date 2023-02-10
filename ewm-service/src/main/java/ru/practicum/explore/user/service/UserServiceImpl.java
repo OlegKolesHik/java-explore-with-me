@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import ru.practicum.explore.exception.ConflictEx;
 import ru.practicum.explore.exception.NotFoundEx;
 import ru.practicum.explore.user.dto.NewUserRequest;
-import ru.practicum.explore.user.dto.UserDto;
-import ru.practicum.explore.user.dto.UserMapper;
 import ru.practicum.explore.user.model.User;
 import ru.practicum.explore.user.repository.UserRepositoryJpa;
+import ru.practicum.explore.user.dto.UserDto;
+import ru.practicum.explore.user.dto.UserMapper;
 import ru.practicum.explore.validation.Validation;
 
 import java.util.Arrays;

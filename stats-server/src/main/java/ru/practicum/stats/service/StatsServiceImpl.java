@@ -1,11 +1,10 @@
-package ru.yandex.practicum.stats.service;
+package ru.practicum.stats.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.yandex.practicum.stats.model.EndpointHitDto;
-import ru.yandex.practicum.stats.model.StatsMapper;
-import ru.yandex.practicum.stats.repository.StatsRepository;
-
+import ru.practicum.stats.model.StatsMapper;
+import ru.practicum.stats.model.EndpointHit;
+import ru.practicum.stats.repository.StatsRepositoryJpa;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -16,12 +15,12 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class StatsServiceImpl implements StatsService {
-    private final StatsRepository statsRepository;
+    private final StatsRepositoryJpa statsRepositoryJpa;
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     @Override
-    public void addHit(EndpointHitDto endpointHitDto) {
-        statsRepository.save(endpointHitDto);
+    public void addHit(EndpointHit endpointHit) {
+        statsRepositoryJpa.save(endpointHit);
     }
 
     @Override
@@ -30,17 +29,16 @@ public class StatsServiceImpl implements StatsService {
         LocalDateTime end = LocalDateTime.parse(stringEnd, FORMATTER);
         List<List<Object>> hits = new ArrayList<>();
         if ((uris != null) & unique) {
-            hits = statsRepository.findAllByUrisAndUnique(start, end, uris);
+            hits = statsRepositoryJpa.findAllByUrisAndUnique(start, end, uris);
         } else if (uris != null && !unique) {
-            hits = statsRepository.findAllByUris(start, end, uris);
+            hits = statsRepositoryJpa.findAllByUris(start, end, uris);
         } else if (uris == null && unique) {
-            hits = statsRepository.findAllByUnique(start, end);
+            hits = statsRepositoryJpa.findAllByUnique(start, end);
         } else {
-            hits = statsRepository.findAllByDate(start, end);
+            hits = statsRepositoryJpa.findAllByDate(start, end);
         }
         return hits.stream()
                 .map(p -> StatsMapper.toViewStats(p))
                 .collect(Collectors.toList());
     }
 }
-

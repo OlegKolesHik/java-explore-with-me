@@ -1,7 +1,10 @@
-package ru.yandex.practicum.stats.model;
+package ru.practicum.stats.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "stats")
-public class EndpointHitDto {
+public class EndpointHit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

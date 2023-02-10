@@ -8,8 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.explore.exception.NotFoundEx;
 import ru.practicum.explore.user.dto.NewUserRequest;
-import ru.practicum.explore.user.dto.UserDto;
 import ru.practicum.explore.user.service.UserService;
+
+import ru.practicum.explore.user.dto.UserDto;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;

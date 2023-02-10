@@ -10,7 +10,6 @@ import ru.practicum.explore.category.dto.CategoryDto;
 import ru.practicum.explore.category.service.CategoryService;
 import ru.practicum.explore.exception.NotFoundEx;
 
-
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 import java.util.List;

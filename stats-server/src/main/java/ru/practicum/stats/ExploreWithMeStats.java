@@ -1,11 +1,12 @@
-package ru.yandex.practicum.stats;
+package ru.practicum.stats;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StatApplication {
+public class ExploreWithMeStats {
     public static void main(String[] args) {
-        SpringApplication.run(StatApplication.class, args);
+        SpringApplication.run(ExploreWithMeStats.class, args);
     }
 }
+

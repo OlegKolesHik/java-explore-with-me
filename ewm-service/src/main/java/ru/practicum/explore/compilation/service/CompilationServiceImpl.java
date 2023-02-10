@@ -1,6 +1,5 @@
 package ru.practicum.explore.compilation.service;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -11,9 +10,11 @@ import ru.practicum.explore.compilation.dto.CompilationMapper;
 import ru.practicum.explore.compilation.dto.NewCompilationDto;
 import ru.practicum.explore.compilation.model.Compilation;
 import ru.practicum.explore.compilation.repository.CompilationRepositoryJpa;
-import ru.practicum.explore.event.repository.EventRepositoryJpa;
 import ru.practicum.explore.event.model.Event;
+import ru.practicum.explore.event.repository.EventRepositoryJpa;
+
 import ru.practicum.explore.validation.Validation;
+
 import java.util.List;
 import java.util.stream.Collectors;
 

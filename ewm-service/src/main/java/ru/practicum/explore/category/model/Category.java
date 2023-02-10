@@ -1,10 +1,10 @@
 package ru.practicum.explore.category.model;
 
-import jdk.jfr.Event;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import ru.practicum.explore.event.model.Event;
 
 import javax.persistence.*;
 import java.io.Serializable;

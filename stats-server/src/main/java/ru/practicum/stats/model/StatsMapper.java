@@ -1,4 +1,4 @@
-package ru.yandex.practicum.stats.model;
+package ru.practicum.stats.model;
 
 import java.util.List;
 

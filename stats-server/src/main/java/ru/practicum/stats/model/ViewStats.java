@@ -1,16 +1,14 @@
-package ru.yandex.practicum.stats.model;
+package ru.practicum.stats.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ViewStats {
-
     private String app;
-
     private String uri;
-
     private int hits;
 }
-
