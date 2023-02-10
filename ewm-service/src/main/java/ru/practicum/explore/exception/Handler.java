@@ -23,6 +23,14 @@ public class Handler {
                 "FORBIDDEN"), HttpStatus.BAD_REQUEST);
     }
 
+    //405
+    @ExceptionHandler(MethodNotAllowed.class)
+    public ResponseEntity<Object> handleMethodNotAllowed(MethodNotAllowed exception) {
+        return new ResponseEntity<>(new ErrorResponse(new String[]{}, exception.getMessage(),
+                "For the requested operation the conditions are not met.",
+                "METHOD_NOT_ALLOWED"), HttpStatus.METHOD_NOT_ALLOWED);
+    }
+
     //403
     @ExceptionHandler(ForbiddenEx.class)
     public ResponseEntity<Object> handleBadRequest(ForbiddenEx exception) {
