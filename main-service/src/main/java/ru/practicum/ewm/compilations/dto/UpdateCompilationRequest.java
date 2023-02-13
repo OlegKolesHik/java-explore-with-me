@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class UpdateCompilationRequest {
     private Set<Long> events;
-    private boolean pinned;
+    private Boolean pinned;
     @Size(max = 100)
     private String title;
 }
