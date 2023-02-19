@@ -16,8 +16,6 @@ import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static ru.practicum.ewm.comments.dto.CommentMapper.DATE_FORMAT;
-
 @Slf4j
 @RestController
 @Validated
@@ -38,8 +36,8 @@ public class EventAdminController {
     public List<EventFullDto> get(@RequestParam(required = false) List<Long> users,
                                   @RequestParam(required = false) List<State> states,
                                   @RequestParam(required = false) List<Long> categories,
-                                  @RequestParam(required = false) @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime rangeStart,
-                                  @RequestParam(required = false) @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime rangeEnd,
+                                  @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeStart,
+                                  @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeEnd,
                                   @RequestParam(defaultValue = "0") @PositiveOrZero Integer from,
                                   @RequestParam(defaultValue = "10") @Positive Integer size) {
         log.info("Admin get users={}, states={}, categories={}, rangeStart={}, rangeEnd={}, from={}, size={}",

@@ -4,8 +4,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import ru.practicum.ewm.request.model.Request;
 
-import static ru.practicum.ewm.comments.dto.CommentMapper.DATE_FORMAT;
-
 @Mapper(componentModel = "spring")
 public interface RequestMapper {
     @Mapping(target = "id", ignore = true)
@@ -15,6 +13,6 @@ public interface RequestMapper {
     @Mapping(target = "created", ignore = true)
     Request toRequest(Long userId, Long eventId);
 
-    @Mapping(target = "created", dateFormat = DATE_FORMAT)
+    @Mapping(target = "created", dateFormat = "yyyy-MM-dd HH:mm:ss")
     ParticipationRequestDto toParticipationRequestDto(Request request);
 }

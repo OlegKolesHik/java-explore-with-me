@@ -10,7 +10,6 @@ import ru.practicum.ewm.event.model.State;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-import static ru.practicum.ewm.comments.dto.CommentMapper.DATE_FORMAT;
 
 @Getter
 @NoArgsConstructor
@@ -22,8 +21,8 @@ public class AdminUpdateEventRequest {
     private Long category;
     @Size(min = 20, max = 7000)
     private String description;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_FORMAT)
-    private LocalDateTime eventDate; // DATE_FORMAT
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime eventDate; // "yyyy-MM-dd HH:mm:ss"
     private Location location;   // координаты необходимо изменить тип
     private Boolean paid;
     private Integer participantLimit;

@@ -17,7 +17,6 @@ import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static ru.practicum.ewm.comments.dto.CommentMapper.DATE_FORMAT;
 
 @Slf4j
 @RestController
@@ -32,8 +31,8 @@ public class EventPublicController {
     public List<EventShortDto> get(@RequestParam(required = false) String text,
                                    @RequestParam(required = false) List<Long> categories,
                                    @RequestParam(required = false) Boolean paid,
-                                   @RequestParam(required = false) @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime rangeStart,
-                                   @RequestParam(required = false) @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime rangeEnd,
+                                   @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeStart,
+                                   @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeEnd,
                                    @RequestParam(defaultValue = "false") Boolean onlyAvailable,
                                    @RequestParam(required = false) Sort sort,
                                    @PositiveOrZero @RequestParam (defaultValue = "0") Integer from,

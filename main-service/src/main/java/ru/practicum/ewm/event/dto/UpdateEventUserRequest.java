@@ -12,8 +12,6 @@ import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-import static ru.practicum.ewm.comments.dto.CommentMapper.DATE_FORMAT;
-
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,7 +22,7 @@ public class UpdateEventUserRequest {
     @Size(min = 20, max = 7000, message = "description менее 20 или более 7000")
     private String description;
     @Future
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_FORMAT)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventDate;
     private Location location;   // координаты необходимо изменить тип
     private Boolean paid;
