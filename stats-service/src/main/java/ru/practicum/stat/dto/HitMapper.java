@@ -10,7 +10,7 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface HitMapper {
-    static String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    public static String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "appId", source = "appId")
