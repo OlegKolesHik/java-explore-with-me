@@ -1,7 +1,6 @@
 package ru.practicum.ewm.comments.model;
 
 import lombok.*;
-import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
 import ru.practicum.ewm.user.model.User;
 
@@ -53,6 +52,4 @@ public class Comment {
     public int hashCode() {
         return getClass().hashCode();
     }
-
-
 }

@@ -8,7 +8,6 @@ import ru.practicum.ewm.event.model.Event;
 import ru.practicum.ewm.user.dto.UserMapper;
 import ru.practicum.ewm.user.model.User;
 
-
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE,
         uses = {CategoryMapper.class, UserMapper.class, CommentMapper.class})
 public interface EventMapper {

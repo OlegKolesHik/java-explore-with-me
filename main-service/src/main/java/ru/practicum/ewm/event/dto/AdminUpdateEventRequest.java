@@ -10,7 +10,6 @@ import ru.practicum.ewm.event.model.State;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
