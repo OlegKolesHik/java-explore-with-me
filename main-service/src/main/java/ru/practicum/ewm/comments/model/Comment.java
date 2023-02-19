@@ -21,6 +21,7 @@ public class Comment {
     @Column(length = 5000, nullable = false)
     private String text;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private CommentStatus status;
     @CreationTimestamp
     private LocalDateTime created;
