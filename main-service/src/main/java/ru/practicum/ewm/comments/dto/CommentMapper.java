@@ -7,7 +7,7 @@ import ru.practicum.ewm.user.model.User;
 @Mapper (componentModel = "spring")
 public interface CommentMapper {
     
-    final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    static String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "author", source = "author")
