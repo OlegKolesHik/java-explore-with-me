@@ -44,8 +44,14 @@ public class Comment {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o));
-        return false;
+        if (this == o) return true;
+        if (!(o instanceof Comment)) return false;
+        return id != null && id.equals(((Comment) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 
 
