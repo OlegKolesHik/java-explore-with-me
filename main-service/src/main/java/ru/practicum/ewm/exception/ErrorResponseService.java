@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 @RequiredArgsConstructor
 @Getter
 public class ErrorResponseService {
