@@ -16,6 +16,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static ru.practicum.ewm.comments.dto.CommentMapper.DATE_FORMAT;
+
 @Service
 public class StatsClient extends BaseClient {
     @Autowired
@@ -26,7 +28,7 @@ public class StatsClient extends BaseClient {
                 .build());
     }
 
-    private static final DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter format = DateTimeFormatter.ofPattern(DATE_FORMAT);
 
     @Value("${static-server-app}")
     private String app;
