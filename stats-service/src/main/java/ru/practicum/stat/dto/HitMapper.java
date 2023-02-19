@@ -10,11 +10,13 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface HitMapper {
+    public static String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "appId", source = "appId")
     Hit toHit(CreateHitDto createHitDto, Long appId);
 
-    @Mapping(target = "created", defaultValue = "yyyy-MM-dd HH:mm:ss")
+    @Mapping(target = "created", defaultValue = DATE_FORMAT)
     @Mapping(target = "app", source = "appName")
     ResponseHitDto toResponseHitDto(Hit hit, String appName);
 
