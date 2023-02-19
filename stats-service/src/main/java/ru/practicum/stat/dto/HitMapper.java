@@ -8,13 +8,15 @@ import ru.practicum.stat.model.ViewStats;
 
 import java.util.List;
 
+import static org.hibernate.type.descriptor.java.DateTypeDescriptor.DATE_FORMAT;
+
 @Mapper(componentModel = "spring")
 public interface HitMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "appId", source = "appId")
     Hit toHit(CreateHitDto createHitDto, Long appId);
 
-    @Mapping(target = "created", defaultValue = "yyyy-MM-dd HH:mm:ss")
+    @Mapping(target = "created", defaultValue = DATE_FORMAT)
     @Mapping(target = "app", source = "appName")
     ResponseHitDto toResponseHitDto(Hit hit, String appName);
 

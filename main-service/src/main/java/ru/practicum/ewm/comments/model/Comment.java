@@ -1,6 +1,7 @@
 package ru.practicum.ewm.comments.model;
 
 import lombok.*;
+import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
 import ru.practicum.ewm.user.model.User;
 
@@ -21,6 +22,7 @@ public class Comment {
     @Column(length = 5000, nullable = false)
     private String text;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private CommentStatus status;
     @CreationTimestamp
     private LocalDateTime created;
@@ -43,9 +45,8 @@ public class Comment {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Comment)) return false;
-        return id != null && id.equals(((Comment) o).getId());
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o));
+        return false;
     }
 
     @Override

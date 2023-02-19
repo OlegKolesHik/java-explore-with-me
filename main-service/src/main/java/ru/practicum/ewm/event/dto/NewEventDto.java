@@ -10,6 +10,8 @@ import ru.practicum.ewm.event.model.Location;
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
+import static ru.practicum.ewm.comments.dto.CommentMapper.DATE_FORMAT;
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,7 +29,7 @@ public class NewEventDto {
     private String description;
     @NotNull
     @Future
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_FORMAT)
     private LocalDateTime eventDate;
     @NotNull(groups = {Create.class})
     private Location location;   // координаты необходимо изменить тип

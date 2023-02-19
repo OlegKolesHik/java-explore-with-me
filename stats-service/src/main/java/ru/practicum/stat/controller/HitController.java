@@ -13,6 +13,8 @@ import ru.practicum.stat.service.HitService;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static org.hibernate.type.descriptor.java.DateTypeDescriptor.DATE_FORMAT;
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -27,8 +29,8 @@ public class HitController {
     }
 
     @GetMapping("/stats")
-    public List<ResponseStatDto> getStats(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime start,
-                                          @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime end,
+    public List<ResponseStatDto> getStats(@RequestParam @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime start,
+                                          @RequestParam @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime end,
                                           @RequestParam(defaultValue = "false") Boolean unique,
                                           @RequestParam(required = false) List<String> uris) {
         log.info("Get stats: start={}, end={}, unique={}, uris={}", start, end, unique, uris);

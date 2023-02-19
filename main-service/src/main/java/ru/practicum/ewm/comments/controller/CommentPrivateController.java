@@ -17,6 +17,8 @@ import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static ru.practicum.ewm.comments.dto.CommentMapper.DATE_FORMAT;
+
 @Slf4j
 @RestController
 @Validated
@@ -60,8 +62,8 @@ public class CommentPrivateController {
 
     @GetMapping("/{userId}/comments")
     public List<CommentFullDto> getAll(@PathVariable Long userId,
-                                       @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeStart,
-                                       @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeEnd,
+                                       @RequestParam(required = false) @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime rangeStart,
+                                       @RequestParam(required = false) @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime rangeEnd,
                                        @RequestParam (defaultValue = "ALL") CommentStatus status,
                                        @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
                                        @Positive @RequestParam(defaultValue = "10") Integer size) {
