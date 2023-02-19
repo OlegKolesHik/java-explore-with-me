@@ -48,8 +48,5 @@ public class Comment {
         return false;
     }
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+
 }
